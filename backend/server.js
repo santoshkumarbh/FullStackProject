@@ -1,22 +1,34 @@
-require('dotenv').config();
-const express=require('express');
-const cors=require('cors');
-const db=require('./models/index');
+const express=require('express')
+const mongoose=require('mongoose')
+const cookieParser=require('cookie-parser')
+const cors=require('cors')
+const authRouter=require("../backend/routes/auth/auth-routes")
 
+mongoose.connect("mongodb+srv://admin:admin123@cluster0.hud5ay8.mongodb.net/fullstack-project")
+    .then(()=>console.log("MongoDB connected"))
+    .catch((error)=>console.log(error))
 
-const app=express();
-app.use(cors());
-app.use(express.json());
-
-//Route imports
-const authRoutes=require('./routes/auth.routes');
-const userRoutes=require('./routes/user.routes');
-
-//start server after syncing db
+const app=express()
 const PORT=process.env.PORT || 5000;
-db.sequelize.sync()
-    .then(()=>{
-        console.log('Database synced');
-        app.listen(PORT,()=>console.log(`Backend running on port ${PORT}`));    
+
+app.use(
+    cors({
+        origin:'http://localhost:5173',
+        methods:['GET','POST','DELETE','PUT'],
+        allowedHeaders:[
+            "Content-Type",
+            'Authorization',
+            'Cache-Control',
+            'Expires',
+            'Pragma'
+        ],
+        credentials:true
     })
-    .catch(err=>console.log('DB sync error:',err));
+);
+
+app.use(cookieParser());
+app.use(express.json());
+app.use("/api/auth",authRouter);
+
+app.listen(PORT, ()=>console.log("Server is running on port", PORT)
+)
