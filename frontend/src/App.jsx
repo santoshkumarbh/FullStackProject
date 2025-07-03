@@ -16,15 +16,19 @@ import ShoppingAccount from "./pages/shopping-view/account"
 import CheckAuth from "./components/common/check-auth"
 import { Rotate3D } from "lucide-react"
 import UnauthPage from "./pages/unauth-page"
+import { useDispatch, useSelector } from "react-redux"
+import { useEffect } from "react"
+import { checkAuth } from "./store/auth-slice"
 
 
 function App() {
 
-  const isAuthenticated=false;
-  const user={
-    name:'santosh',
-    role:'user'
-  };
+  const {user,isAuthenticated}=useSelector((state)=>state.auth)
+  const dispatch=useDispatch();
+
+  useEffect(()=>{
+    dispatch(checkAuth());
+  },[dispatch]);
 
   return (
     <div className="flex flex-col overflow-hidden bg-white">
