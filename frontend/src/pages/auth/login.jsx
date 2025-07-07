@@ -30,6 +30,8 @@ function AuthLogin(){
             
         })
     }
+    console.log("second");
+    
 
     return(
         <div className="mx-auto w-full max-w-md space-y-6">

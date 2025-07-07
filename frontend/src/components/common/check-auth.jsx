@@ -5,6 +5,9 @@ export default function CheckAuth({isAuthenticated,user, children}){
 
     const location=useLocation();
 
+    console.log(location.pathname,isAuthenticated );
+    
+
     //if user is not authenticted and trying to access other page then redirect to login page
     if(!isAuthenticated && !(location.pathname.includes('/login') || location.pathname.includes('/register'))){
         return <Navigate to='/auth/login'/>
