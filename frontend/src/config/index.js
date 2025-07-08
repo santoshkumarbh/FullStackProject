@@ -1,48 +1,45 @@
+const registerFormControls = [
+  {
+    name: "userName",
+    label: "User Name",
+    placeholder: "Enter your user name",
+    componentType: "input",
+    type: "text",
+  },
+  {
+    name: "email",
+    label: "Email",
+    placeholder: "Enter your email",
+    componentType: "input",
+    type: "email",
+  },
+  {
+    name: "password",
+    label: "Password",
+    placeholder: "Enter your Password",
+    componentType: "input",
+    type: "password",
+  },
+];
 
-const registerFormControls=[
-    {
-        name:'userName',
-        label:'User Name',
-        placeholder:'Enter your user name',
-        componentType:'input',
-        type:'text',
-    },
-    {
-        name:'email',
-        label:'Email',
-        placeholder:'Enter your email',
-        componentType:'input',
-        type:'email',
-    },
-    {
-        name:'password',
-        label:'Password',
-        placeholder:'Enter your Password',
-        componentType:'input',
-        type:'password',
-    }
-]
+const LoginFormControls = [
+  {
+    name: "email",
+    label: "Email",
+    placeholder: "Enter your email",
+    componentType: "input",
+    type: "email",
+  },
+  {
+    name: "password",
+    label: "Password",
+    placeholder: "Enter your Password",
+    componentType: "input",
+    type: "password",
+  },
+];
 
-const LoginFormControls=[
-   
-    {
-        name:'email',
-        label:'Email',
-        placeholder:'Enter your email',
-        componentType:'input',
-        type:'email',
-    },
-    {
-        name:'password',
-        label:'Password',
-        placeholder:'Enter your Password',
-        componentType:'input',
-        type:'password',
-    }
-]
-
-
- const addProductFormElements = [
+const addProductFormElements = [
   {
     label: "Title",
     name: "title",
@@ -104,28 +101,37 @@ const LoginFormControls=[
   },
 ];
 
+export const shoppingViewHeaderMenuItems = [
+  {
+    id: "home",
+    label: "Home",
+    path: "/shop/home",
+  },
+  {
+    id: "men",
+    label: "Men",
+    path: "/shop/listing",
+  },
+  {
+    id: "women",
+    label: "Women",
+    path: "/shop/listing",
+  },
+  {
+    id: "kids",
+    label: "Kids",
+    path: "/shop/listing",
+  },
+  {
+    id: "accessories",
+    label: "Accessories",
+    path: "/shop/listing",
+  },
+  {
+    id: "footwear",
+    label: "Footwear",
+    path: "/shop/listing",
+  },
+];
 
-export const shoppingViewHeaderMenuItems=[
-    {
-      id:'home',
-      label:'Home',
-      path:'/shop/home'
-    },
-    {
-      id:'men',
-      label:'Men',
-      path:'/shop/listing'
-    },
-    {
-      id:'women',
-      label:'Men',
-      path:'/shop/listing'
-    },
-    {
-      id:'men',
-      label:'Men',
-      path:'/shop/listing'
-    }
-]
-
-export {registerFormControls,LoginFormControls,addProductFormElements}
+export { registerFormControls, LoginFormControls, addProductFormElements };
