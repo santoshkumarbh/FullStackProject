@@ -69,7 +69,8 @@ const loginUser =async(req,res)=>{
             user:{
                 email:checkUser.email,
                 role:checkUser.role,
-                id:checkUser._id
+                id:checkUser._id,
+                userName:checkUser.userName,
             }
         })
         
