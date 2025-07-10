@@ -1,7 +1,9 @@
+import PorductFilter from "@/components/shopping-view/filter";
+
 export default function ShoppingListing(){
     return(
-        <div>
-            shopping listing page
+        <div className="grid grid-cols-1 md:grid-cols-[300px_1fr] gap-6 p-4 md:p-6">
+            <PorductFilter/>
         </div>
     )
 }
