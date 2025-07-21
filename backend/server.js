@@ -4,6 +4,7 @@ const cookieParser=require('cookie-parser')
 const cors=require('cors')
 const authRouter=require("../backend/routes/auth/auth-routes")
 const adminProductsRouter=require('./routes/admin/products-routes')
+const shopProductRouter=require('./routes/shop/products-routes')
 
 mongoose.connect("mongodb+srv://admin:admin123@cluster0.hud5ay8.mongodb.net/fullstack-project")
     .then(()=>console.log("MongoDB connected"))
@@ -31,6 +32,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use("/api/auth",authRouter);
 app.use("/api/admin/products", adminProductsRouter);
+app.use("/api/shop/products",shopProductRouter);
 
 app.listen(PORT, ()=>console.log("Server is running on port", PORT)
 )
