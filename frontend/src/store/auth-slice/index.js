@@ -17,7 +17,6 @@ export const registerUser=createAsyncThunk(
                 withCredentials:true,
             }
         );
-        console.log("san",response.data);
         
         return response.data;
     }
@@ -102,8 +101,6 @@ const authSlice=createSlice({
         }).addCase(checkAuth.pending, (state)=>{
             state.isLoading=true
         }).addCase(checkAuth.fulfilled,(state,action)=>{
-            console.log("third");
-            
             state.isLoading=false;
             state.user= !action.payload.success? null : action.payload.user;
             state.isAuthenticated=action.payload.success? true : false;

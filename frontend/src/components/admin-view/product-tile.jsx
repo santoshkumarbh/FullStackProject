@@ -4,7 +4,7 @@ import { Card, CardContent, CardFooter } from "../ui/card";
 export default function AdminProductTile({ product,setOpenCreateProductsDialog,setCurrentEditedId,setFormData,handleDelete }) {
   return (
     <Card className="w-full max-w-sm mx-auto relative py-0 pb-6 ">
-      <div>
+      <div >
         <div className="">
           <img
             src={product.image}
